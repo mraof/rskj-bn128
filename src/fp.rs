@@ -1,6 +1,6 @@
 use jni::objects::{JClass, JObject};
 use jni::JNIEnv;
-use jni::sys::{jboolean, jlong};
+use jni::sys::{jboolean, jlong, jbyte};
 use parity_bn::Fq;
 
 #[no_mangle]
@@ -147,6 +147,24 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp_nnegate(
 ) {
     let fq = -fq_from_jlongs([a, b, c, d]);
     fq_return(env, fq, ret)
+}
+
+
+#[no_mangle]
+#[allow(non_snake_case)]
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp_nbytes(
+    env: JNIEnv,
+    _class: JClass,
+    a: jlong,
+    b: jlong,
+    c: jlong,
+    d: jlong,
+    ret: JObject,
+) {
+    let fq = fq_from_jlongs([a, b, c, d]);
+    let fq_bytes: [jbyte; 32] = unsafe { std::mem::transmute(fq) };
+    env.set_byte_array_region(ret.into_inner(), 0, &fq_bytes)
+        .expect("Unable to set return array for fq");
 }
 
 
