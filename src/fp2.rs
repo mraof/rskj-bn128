@@ -6,7 +6,7 @@ use parity_bn::{Fq, Fq2};
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_nadd(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_Fp2_nadd(
     env: JNIEnv,
     _class: JClass,
     la0: jlong,
@@ -35,7 +35,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_nadd(
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_nmul(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_Fp2_nmul(
     env: JNIEnv,
     _class: JClass,
     la0: jlong,
@@ -64,7 +64,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_nmul(
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_nsub(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_Fp2_nsub(
     env: JNIEnv,
     _class: JClass,
     la0: jlong,
@@ -93,7 +93,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_nsub(
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_nsquared(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_Fp2_nsquared(
     env: JNIEnv,
     _class: JClass,
     a0: jlong,
@@ -112,7 +112,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_nsquared(
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_ndbl(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_Fp2_ndbl(
     env: JNIEnv,
     _class: JClass,
     a0: jlong,
@@ -131,7 +131,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_ndbl(
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_ninverse(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_Fp2_ninverse(
     env: JNIEnv,
     _class: JClass,
     a0: jlong,
@@ -152,7 +152,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_ninverse(
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_Fp2_nnegate(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_Fp2_nnegate(
     env: JNIEnv,
     _class: JClass,
     a0: jlong,

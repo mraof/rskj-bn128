@@ -7,7 +7,7 @@ use crate::fp::fq_from_jlongs;
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_BN128G1_onCurve(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_BN128G1_onCurve(
     _env: JNIEnv,
     _class: JClass,
     x0: jlong,
@@ -27,7 +27,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_BN128G1_onCurve(
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_BN128G1_affine(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_BN128G1_affine(
     env: JNIEnv,
     _class: JClass,
     x0: jlong,
@@ -52,7 +52,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_BN128G1_affine(
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_BN128G1_nadd(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_BN128G1_nadd(
     env: JNIEnv,
     _class: JClass,
     lx0: jlong,
@@ -88,7 +88,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_BN128G1_nadd(
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_BN128G1_nmul(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_BN128G1_nmul(
     env: JNIEnv,
     _class: JClass,
     lx0: jlong,

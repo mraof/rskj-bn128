@@ -8,7 +8,7 @@ use crate::g2::g2_from_jlongs;
 
 #[no_mangle]
 #[allow(non_snake_case)]
-pub extern "system" fn Java_org_ethereum_crypto_altbn128_rust_PairingCheck_nrun(
+pub extern "system" fn Java_org_ethereum_crypto_altbn128_PairingCheck_nrun(
     env: JNIEnv,
     _class: JClass,
     data: JObject,
