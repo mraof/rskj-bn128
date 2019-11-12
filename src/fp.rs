@@ -17,7 +17,6 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_Fp_newFq(
     let mut byte_array = [0; 32];
     byte_array[(32 - vec.len())..].copy_from_slice(&vec);
     if let Ok(fq) = Fq::from_slice(&byte_array) {
-        //eprintln!("{:?} to {:?}", byte_array, fq);
         fq_return(env, fq, ret);
         true as jboolean
     } else {

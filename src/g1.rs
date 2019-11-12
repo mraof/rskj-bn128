@@ -83,7 +83,6 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_BN128G1_nadd(
 ) {
     let left_g1 = g1_from_jlongs([lx0, lx1, lx2, lx3, ly0, ly1, ly2, ly3, lz0, lz1, lz2, lz3]);
     let right_g1 = g1_from_jlongs([rx0, rx1, rx2, rx3, ry0, ry1, ry2, ry3, rz0, rz1, rz2, rz3]);
-    eprintln!("{}, {}", left_g1.is_zero(), right_g1.is_zero());
     g1_return(env, left_g1 + right_g1, ret)
 }
 
