@@ -29,7 +29,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_BN128G2_onCurve(
 ) -> jboolean {
     let x = fq2_from_jlongs([xa0, xa1, xa2, xa3, xb0, xb1, xb2, xb3]);
     let y = fq2_from_jlongs([ya0, ya1, ya2, ya3, yb0, yb1, yb2, yb3]);
-    (y * y == (x * x * x) + G2::b()) as jboolean
+    AffineG2::new(x, y).is_ok() as jboolean
 }
 
 

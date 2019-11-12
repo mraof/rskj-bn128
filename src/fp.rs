@@ -17,6 +17,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_Fp_newFq(
     let mut byte_array = [0; 32];
     byte_array[(32 - vec.len())..].copy_from_slice(&vec);
     if let Ok(fq) = Fq::from_slice(&byte_array) {
+        //eprintln!("{:?} to {:?}", byte_array, fq);
         fq_return(env, fq, ret);
         true as jboolean
     } else {
@@ -162,7 +163,9 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_Fp_nbytes(
     ret: JObject,
 ) {
     let fq = fq_from_jlongs([a, b, c, d]);
-    let fq_bytes: [jbyte; 32] = unsafe { std::mem::transmute(fq) };
+    let mut bytes: [u8; 32] = [0; 32];
+    fq.to_big_endian(&mut bytes).unwrap();
+    let fq_bytes: [jbyte; 32] = unsafe { std::mem::transmute(bytes) };
     env.set_byte_array_region(ret.into_inner(), 0, &fq_bytes)
         .expect("Unable to set return array for fq");
 }

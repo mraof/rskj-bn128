@@ -18,6 +18,7 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_PairingCheck_nrun(
     env.get_long_array_region(data.into_inner(), 0, &mut longs).expect("Failed to get array");
 
     let one = Gt::one();
+    let mut product = Gt::one();
 
     for i in 0..(len / 36) {
         let o = i * 36;
@@ -28,10 +29,12 @@ pub extern "system" fn Java_org_ethereum_crypto_altbn128_PairingCheck_nrun(
         let g1 = g1_from_jlongs(g1_data);
         let g2 = g2_from_jlongs(g2_data);
 
-        if pairing(g1, g2) != one {
-            return false as jboolean
+        let gt = pairing(g1, g2);
+
+        if gt != one {
+            product = product * gt;
         }
     }
 
-    true as jboolean
+    (product == one) as jboolean
 }
